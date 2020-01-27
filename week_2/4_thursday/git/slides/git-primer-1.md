@@ -268,10 +268,10 @@ $ git remote add origin\
 # Literature
 
 
-##
-https://git-scm.com/book/en/v2
-
+## Official documentation
 <img src="img/pro-git-book/progit2.png" height="300">
+
+- https://git-scm.com/book/en/v2
 
 - https://git-scm.com/
 - https://git-scm.com/docs/gittutorial
