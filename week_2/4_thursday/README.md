@@ -16,6 +16,12 @@ Max, Andrea
 
 
 ### Cheatsheets
- - RStudio IDE cheatsheet
- - ggplot cheatsheet
-  
+ - [RStudio IDE cheatsheet](data-vis/cheatsheets/rstudio-ide.pdf)
+ - [data vis cheatsheet](data-data-vis/cheatsheets/data-visualization-2.1.pdf)
+ - [ggplot cheatsheet](data-vis/cheatsheets/ggplot2-cheatsheet-2.1.pdf)
+
+### Readings Data Visualization
+- [A tour through the visualization zoo](https://homes.cs.washington.edu/~jheer//files/zoo/)
+- [A layered grammar of graphics](https://byrneslab.net/classes/biol607/readings/wickham_layered-grammar.pdf)
+- [plotly: interactive ggplots](https://plot.ly/ggplot2/)
+- [why a digram is (sometimes) worth ten thousands words](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1551-6708.1987.tb00863.x)
