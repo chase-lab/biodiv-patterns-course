@@ -27,6 +27,7 @@ output: revealjs::revealjs_presentation
 5. Learn at your own pace ```ggplot2``` using ```swirl```
 
 
+
 ## Visualizing data
 ### What
 - Graphical representation of knowledge/data
@@ -50,6 +51,7 @@ output: revealjs::revealjs_presentation
 3. [Datawrapper](https://www.datawrapper.de/)
 ### little programming required
 R, Python, Matlab, gnuplot, d3/JavaScript
+
 
 
 ## Datawrapper
