@@ -120,7 +120,6 @@ https://www.coursera.org/specializations/jhu-data-science
 
 ## Example Dataset
 
-
 ```r
 library(ggplot2)
 str(mpg)
@@ -221,6 +220,7 @@ str(maacs)
 ```
 
 
+
 ## Histogram of eNO
 
 ```r
@@ -295,6 +295,7 @@ qplot(log(pm25), log(eno), data = maacs, geom = c("point", "smooth"),
 - Syntax somewhere in between base/lattice
 - Produces very nice graphics, essentially publication ready (if you like the design)
 - Difficult to go against the grain/customize (don’t bother; use full ggplot2 power in that case)
+
 
 
 ## Resources
