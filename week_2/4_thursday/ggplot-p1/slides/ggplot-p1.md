@@ -304,3 +304,14 @@ qplot(log(pm25), log(eno), data = maacs, geom = c("point", "smooth"),
 - The _R Graphics Cookbook_ by Winston Chang (examples in base plots and in ggplot2)
 - ggplot2 web site (http://ggplot2.org)
 - ggplot2 mailing list (http://goo.gl/OdW3uB), primarily for developers
+
+
+
+## Exercise:
+1. ```install.packages('swirl')```
+2. load ```library('swirl')```
+3. run ```install_from_swirl("Exploratory Data Analysis")```
+4. Enter swirl: ```swirl()```
+5. Select "1: Exploratory Data Analysis" 
+   
+   and then "8: GGPlot2 Part1"
