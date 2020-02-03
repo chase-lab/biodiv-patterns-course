@@ -281,7 +281,8 @@ qplot(log(pm25), log(eno), data = maacs, color = mopos,
 ## Scatterplots: eNO vs. PM$_{2.5}$
 
 ```r
-qplot(log(pm25), log(eno), data = maacs, geom = c("point", "smooth"), 
+qplot(log(pm25), log(eno), data = maacs, 
+      geom = c("point", "smooth"), 
       method = "lm", facets = . ~ mopos)
 ```
 
