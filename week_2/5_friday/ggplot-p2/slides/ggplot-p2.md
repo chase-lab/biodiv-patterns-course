@@ -295,7 +295,7 @@ g + geom_point(alpha = 1/3) +
 
 ## Exercise
 0. Continue/complete with the previous exercise
-1. Enter swirl: ```swirl()``
+1. Enter swirl: type ```swirl()```
 2. Select "1: Exploratory Data Analysis" 
    
    and then "9: GGPlot2 Part1"
@@ -304,5 +304,5 @@ g + geom_point(alpha = 1/3) +
 
 ## 2th exercise
 0. Select an example from https://www.r-graph-gallery.com/
-1. Understand the ggplot code
+1. Understand the ```ggplot2``` code
 2. Explain the plot to your fellow student
