@@ -1,5 +1,5 @@
 # Topic
-Measuring biodiversity
+Metacommunity
 
 ## Lecturer
-Jon, Alban
+Jon, Andrea, Chase
