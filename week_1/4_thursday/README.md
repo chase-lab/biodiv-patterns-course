@@ -7,7 +7,7 @@ Jon, Andrea, Shane
 ## Schedule
 Morning (from 9:00): Theoretical lesson
 
-Afternoon (from 12:30): Practical lesson using SPATCOM in R
+Afternoon (from 12:30): Practical lesson using meta-community model SPATCOM in R
 - Introduction to SPATCOM
     - Initialization
     - Model processes
@@ -15,7 +15,7 @@ Afternoon (from 12:30): Practical lesson using SPATCOM in R
         - Niche-based
         - Neutral
     
-- Excercises
+- Exercises
     - Get to know SPATCOM and interpret model results
     - Regional species richness
     - From niche to neutral
