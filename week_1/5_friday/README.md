@@ -1,5 +1,5 @@
 # Topic
-Macroecology
+Global patterns of biodiversity
 
 ## Lecturer
-Petr, Thore
+Petr
