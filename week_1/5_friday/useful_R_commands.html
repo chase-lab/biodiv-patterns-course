@@ -232,9 +232,22 @@ summary {
 
 </div>
 
+<div id="TOC">
+<ul>
+<li><a href="#libraries"><span class="toc-section-number">1</span> Libraries</a></li>
+<li><a href="#projections"><span class="toc-section-number">2</span> Projections</a></li>
+<li><a href="#file-operations"><span class="toc-section-number">3</span> File operations</a></li>
+<li><a href="#rasters"><span class="toc-section-number">4</span> Rasters</a></li>
+<li><a href="#shapefiles"><span class="toc-section-number">5</span> Shapefiles</a></li>
+<li><a href="#analysis"><span class="toc-section-number">6</span> Analysis</a><ul>
+<li><a href="#exploring-relationships-in-the-data"><span class="toc-section-number">6.1</span> Exploring relationships in the data</a></li>
+<li><a href="#explaining-y-by-x"><span class="toc-section-number">6.2</span> Explaining <code>y</code> by <code>x</code></a></li>
+</ul></li>
+</ul>
+</div>
 
 <div id="libraries" class="section level1">
-<h1>Libraries</h1>
+<h1><span class="header-section-number">1</span> Libraries</h1>
 <p>For GIS operations</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(raster) <span class="co"># for raster data</span>
 <span class="kw">library</span>(sp)     <span class="co"># for vector data</span>
@@ -245,18 +258,18 @@ summary {
 <span class="kw">library</span>(broom)   <span class="co"># for preparation of shapefiles for ggplot2</span></code></pre></div>
 </div>
 <div id="projections" class="section level1">
-<h1>Projections</h1>
+<h1><span class="header-section-number">2</span> Projections</h1>
 <p>We will work with <strong>Behrmann</strong> equal-area projection. The other useful projection is the <strong>WGS84</strong>, which is what Lat and Lon is.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">BEHRMANN &lt;-<span class="st"> </span><span class="kw">CRS</span>(<span class="st">&quot;+proj=cea +lon_0=0 +lat_ts=30 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0&quot;</span>)
 WGS84 &lt;-<span class="st"> </span><span class="kw">CRS</span>(<span class="st">&quot;+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0&quot;</span>)</code></pre></div>
 </div>
 <div id="file-operations" class="section level1">
-<h1>File operations</h1>
+<h1><span class="header-section-number">3</span> File operations</h1>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">list.files</span>()
 <span class="kw">file.copy</span>()</code></pre></div>
 </div>
 <div id="rasters" class="section level1">
-<h1>Rasters</h1>
+<h1><span class="header-section-number">4</span> Rasters</h1>
 <p>Loading raster</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">raster</span>(<span class="st">&quot;path to your raster&quot;</span>)</code></pre></div>
 <p>Plotting raster x</p>
@@ -277,18 +290,18 @@ WGS84 &lt;-<span class="st"> </span><span class="kw">CRS</span>(<span class="st"
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stack</span>(x1, x2, ...)</code></pre></div>
 </div>
 <div id="shapefiles" class="section level1">
-<h1>Shapefiles</h1>
+<h1><span class="header-section-number">5</span> Shapefiles</h1>
 <p>Load a shapefile</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">readOGR</span>(<span class="dt">dsn=</span> <span class="st">&quot;Shapefile directory&quot;</span>, <span class="dt">layer =</span> <span class="st">&quot;Shapefile name&quot;</span>)</code></pre></div>
 </div>
 <div id="analysis" class="section level1">
-<h1>Analysis</h1>
+<h1><span class="header-section-number">6</span> Analysis</h1>
 <div id="exploring-relationships-in-the-data" class="section level2">
-<h2>Exploring relationships in the data</h2>
+<h2><span class="header-section-number">6.1</span> Exploring relationships in the data</h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pairs</span>()</code></pre></div>
 </div>
 <div id="explaining-y-by-x" class="section level2">
-<h2>Explaining <code>y</code> by <code>x</code></h2>
+<h2><span class="header-section-number">6.2</span> Explaining <code>y</code> by <code>x</code></h2>
 <p>Generalized linear models (GLM)</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">M &lt;-<span class="st"> </span><span class="kw">glm</span>(y <span class="op">~</span><span class="st"> </span>x, <span class="dt">data =</span> yourdata)
 <span class="kw">summary</span>(M)

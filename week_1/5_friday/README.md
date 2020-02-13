@@ -15,10 +15,10 @@ Email: petr.keil@idiv.de
 9:00 - 11:30 
 - Intro & basic terms (30 min)
 - Exploring [Phylacine](https://megapast2future.github.io/PHYLACINE_1.2/) data (1 h)
-- Skimming papers (1 h)
+- Skimming through papers (1 h)
 
 12:30 - 15:30 
-- Setting research questions (30 min)
+- Setting research questions and hypotheses (30 min)
 - Independent work in R
 - Summary & discussion
 

@@ -5,7 +5,10 @@ date: "February 13, 2020"
 output: 
   html_document: 
     highlight: pygments
+    keep_md: yes
+    number_sections: yes
     theme: cerulean
+    toc: yes
 ---
 
 ```{r setup, include=FALSE}
