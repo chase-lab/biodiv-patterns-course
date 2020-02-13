@@ -46,9 +46,5 @@ Other potentially useful software:
 
 - [QGIS](https://www.qgis.org/en/site/)
 
-## Literature
 
-- Gaston (2000) Global patterns in biodiversity. Nature: 405, 220-226.
-- Lomolino, Riddle & Whittaker (2017) *Biogeography: Biological diversity across 
-space and time*. Oxford University Press.
 
