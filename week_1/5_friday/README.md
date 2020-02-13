@@ -13,12 +13,12 @@ Email: petr.keil@idiv.de
 # Schedule
 
 9:00 - 11:30 
-- Intro & basic terms
-- Skimming papers
-- Exploring [Phylacine](https://megapast2future.github.io/PHYLACINE_1.2/) data
+- Intro & basic terms (30 min)
+- Exploring [Phylacine](https://megapast2future.github.io/PHYLACINE_1.2/) data (1 h)
+- Skimming papers (1 h)
 
 12:30 - 15:30 
-- Setting research questions
+- Setting research questions (30 min)
 - Independent work in R
 - Summary & discussion
 
@@ -39,9 +39,8 @@ Necessary R packages:
 Potentially useful R packages:
 
 - ```randomForest```
-- ```mgcv```
-- ```tidyverse```
 - ```ggplot2```
+- ```broom```
 
 Other potentially useful software:
 
