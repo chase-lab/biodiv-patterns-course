@@ -7,18 +7,20 @@ Global patterns of biodiversity
 Petr Keil 
 
 Website: [https://petrkeil.github.io/website/](https://petrkeil.github.io/website/)
+
 Email: petr.keil@idiv.de
 
 # Schedule
 
 9:00 - 11:30 
-- Intro
-- Exploring phylacine
+- Intro & basic terms
+- Skimming papers
+- Exploring [Phylacine](https://megapast2future.github.io/PHYLACINE_1.2/) data
 
-9:30 - 10:30 
+12:30 - 15:30 
 - Setting research questions
-- Independent work
-- Summary
+- Independent work in R
+- Summary & discussion
 
 # Goals
 
@@ -34,10 +36,12 @@ Necessary R packages:
 - ```sp```
 - ```rgdal```
 
-Useful R packages:
+Potentially useful R packages:
 
 - ```randomForest```
 - ```mgcv```
+- ```tidyverse```
+- ```ggplot2```
 
 Other potentially useful software:
 
