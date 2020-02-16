@@ -1,0 +1,194 @@
+---
+title: "CAFE Notebook"
+output: html_notebook
+---
+
+```{r}
+# Install and load r packages we need
+library(dplyr)
+library(priceTools)
+library(ggplot2)
+library(viridis)
+library(grid)
+library(gridExtra)
+```
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+```{r}
+image(volcano, col =viridis(200))
+```
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+
+```{r}
+grid_arrange_shared_legend <- function(..., ncol = length(list(...)), nrow = 1, position = c("bottom", "right")) {
+  
+  plots <- list(...)
+  position <- match.arg(position)
+  g <- ggplotGrob(plots[[1]] + theme(legend.position = position))$grobs
+  legend <- g[[which(sapply(g, function(x) x$name) == "guide-box")]]
+  lheight <- sum(legend$height)
+  lwidth <- sum(legend$width)
+  gl <- lapply(plots, function(x) x + theme(legend.position="none"))
+  gl <- c(gl, ncol = ncol, nrow = nrow)
+  
+  combined <- switch(position,
+                     "bottom" = arrangeGrob(do.call(arrangeGrob, gl),
+                                            legend,
+                                            ncol = 1,
+                                            heights = unit.c(unit(1, "npc") - lheight, lheight)),
+                     "right" = arrangeGrob(do.call(arrangeGrob, gl),
+                                           legend,
+                                           ncol = 2,
+                                           widths = unit.c(unit(1, "npc") - lwidth, lwidth)))
+  
+  grid.newpage()
+  grid.draw(combined)
+  
+  # return gtable invisibly
+  invisible(combined)
+  
+}
+
+
+```
+
+
+```{r}
+# Load some data
+
+kelp <- read.csv("./Data/Casasetal_2004_Table1.csv", header=TRUE, na.strings = 0 ) 
+
+head(kelp)
+```
+
+
+```{r}
+# identify grouping variables
+kelp$Plot<-as.factor(kelp$Plot)
+kelp$Block<-as.factor(kelp$Block)
+kelp$PB<-as.factor(kelp$PB)
+kelp$Species<-as.factor(kelp$Species)
+kelp$MeanBiomass<-as.numeric(kelp$MeanBiomass)
+kelp$Treatment<-as.factor(as.character(kelp$Treatment))
+
+group.vars<-c("Block")
+treat.vars<-c("Treatment")
+grouped.dat.kelp<- kelp %>% group_by(.dots=c(treat.vars,group.vars))
+
+# use the question mark to find out more about a function
+#?pairwise.price
+
+res.kelp <- pairwise.price(grouped.dat.kelp, species="Species", func="MeanBiomass")
+
+# Create a single column keeping track of the paired set of seeding treatments & other grouping variables:
+pp.k<-res.kelp
+
+pp.k<-group.columns(pp.k,gps=c(treat.vars), drop=T)
+
+head(pp.k)
+```
+
+
+```{r}
+
+# prune to only a comparison we want
+pp.k<-pp.k[pp.k$Treatment %in% c('present removed', 'present present'),]
+
+# plot!
+
+# BEF style
+leap.zig(pp.k,type='bef',standardize = FALSE,raw.points = T)+ 
+  annotate("text", x = mean(pp.k$x.rich), y = mean(pp.k$x.func), 
+           label = "*",size=8)+ggtitle('present removed')+theme_classic()
+
+# CAFE style with gains and losses
+leap.zig(pp.k,type='cafe',standardize = FALSE,raw.points = T)+ 
+  annotate("text", x = mean(pp.k$x.rich), y = mean(pp.k$x.func), 
+           label = "*",size=8)+ggtitle('present removed')+theme_classic()
+
+
+
+test.partitions(pp.k,type='cafe',treat.var = 'Treatment',control = 'present present',print=T,plot=T)
+
+```
+
+
+
+```{r}
+# Another example from Flory & Clay
+
+grass <- read.csv("./Data/Flory&Clay_2010_HarvestDatafrom2007.csv", header=TRUE) %>%
+  as_tibble()
+
+head(grass)
+```
+
+
+```{r}
+# identify grouping variables
+group.vars <- c('plot', 'quad')
+treat.vars<-c('trt','tree')
+grouped.dat.grass<- grass %>% group_by(.dots=c(group.vars,treat.vars))
+
+# use the question mark to find out more about a function
+#?pairwise.price
+
+res.grass <- pairwise.price(grouped.dat.grass, species="spp", func="mass")
+
+# Create a single column keeping track of the paired set of seeding treatments & other grouping variables:
+pp.g<-res.grass
+pp.g<-group.columns(pp.g,gps=c(group.vars,treat.vars), drop=T)
+
+head(pp.g)
+```
+
+
+
+
+```{r}
+
+# so what are the comparisons ?
+# extract only the appropriate comparisons we are interested in
+levels(pp.g$trt)
+p.g2 <- pp.g[pp.g$trt %in% c('UN INV'),]
+
+levels(p.g2$quad)
+p.g3 <- p.g2[p.g2$quad %in% c('A A'),]
+
+levels(p.g3$tree)
+p.g4 <- p.g3[p.g3$tree %in% c('T T', 'S S'),]
+
+levels(p.g4$plot)
+
+head(p.g4)
+ 
+```
+
+
+
+
+```{r}
+# now some plots
+
+leap.zig(p.g4,type='cafe',standardize = FALSE,raw.points = F)+ 
+  annotate("text", x = mean(p.g4$x.rich), y = mean(p.g4$x.func), 
+           label = "*",size=8)+ggtitle('Absent vs. Invaded')+theme_classic()
+ 
+leap.zig(p.g4,type='bef',standardize = FALSE,raw.points = F)+ 
+  annotate("text", x = mean(p.g4$x.rich), y = mean(p.g4$x.func), 
+           label = "*",size=8)+ggtitle('Absent vs. Invaded')+theme_classic()
+```
+
+
+
+
+

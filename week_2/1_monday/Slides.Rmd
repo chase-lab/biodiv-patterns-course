@@ -1,0 +1,366 @@
+---
+title: "Biodiversity, Community Assembly, Ecosystems, Ecosystem Functioning"
+author: "Emma Ladouceur"
+date: "February 19, 2020"
+output: 
+  ioslides_presentation: default
+  beamer_presentation: default
+  widescreen: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+logo<-"img/iDiv_Logo_short.png"
+```
+
+
+## Accessing these materials
+
+- Read the instructions on the readme, and lets take a few minutes to get set up and follow along together
+ 
+<center>https://github.com/chase-lab/biodiv-patterns-course<center>
+
+
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## R Markdown
+
+This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. Once Knitted, open in your browser using the button at the top! 
+
+<center>![Alt Text](https://media.giphy.com/media/DBW3BniaWrFo4/giphy.gif){width=250px}</center>
+
+
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## Its Monday, so ... a brief review
+
+<center>![Alt Text](https://media.giphy.com/media/65Kf2VssaGc7HLHUzW/giphy.gif)</center>
+
+## What IS a species : The six kingdoms
+
+- Plantae, Fungi, Animalia, Protista, Bacteria, Archaebacteria (single-celled organisms)
+
+<center><img src="img/div_king.png" height="400px" /></center>
+
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## What IS a species ? 
+<center><img src="img/Div_Tax.png" height="450px"><center>
+
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## Taxonomy is one of the biggest bioinformatics problems of all time
+- [The Plant List](http://www.theplantlist.org/)
+
+- [Taxize](https://github.com/ropensci/taxize/)
+
+<center><img src="img/TPL.png" width="800px" /></center>
+*Source: The Plant List*
+
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## Where do we belong?
+<center><img src="img/fam_tree.png" height="450px" /></center>
+
+<center>[The Encyclopedia of Life](https://tinyurl.com/vjf8z9a</)<center>
+
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## Where do we belong ? {.columns-2}
+<center>![Alt Text](https://media.giphy.com/media/443pAv9m6Ti8KiCoAi/giphy.gif)</center>
+
+<center>![Alt Text](https://media.giphy.com/media/4GZZzXdy3qBj3kJnXv/giphy.gif)</center>
+
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## Many ways to quantify species diversity 
+
+<center><img src="img/Pollock_2017.png" alt="Pollock et al. 2017" height="450px"><center>
+*Pollock et al. 2017*
+
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## Species interactions build ecosystems
+<div style="float: left; width: 40%;">
+- Species interact:
+- Compete;
+- Facilitate...
+</div>
+
+<div style="float: right; width: 60%;">
+<center><img src="img/Harvey_2017.png" alt="Harvey et al. 2017" height="450px"><center>
+*Harvey et al. 2017*
+</div>
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## Feedback loops
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/inVZoI1AkC8?start=15" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+
+## Effects of disrupted feedback
+<div style="float: left; width: 40%;">
+- degredation
+- decline
+- an alternatively stable state
+</div>
+
+<div style="float: right; width: 60%;">
+<center><img src="img/Beisner_2003.png" alt="Beisner et al. 2003" height="450px"><center>
+*Beisner et al. 2003*
+</div>
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+
+## Ecosystems are changing
+
+<center><img src="img/Magurran_2016.png" height="450px" /></center>
+*Magurran 2016*
+
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## But not always in obvious ways or on modern scales
+<div style="float: left; width: 40%;">
+- Again, scale matters: system, spatial, taxonomic, temporal
+</div>
+
+<div style="float: right; width: 60%;">
+<center><img src="img/Willis_2006.png" height="450px" /></center>
+*Willis 2006*
+</div>
+
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+
+## Ecology & Conservation
+- Ecology is the study of how organisms interact with one another and with their physical environment. 
+
+- Conservation biology is the management of nature and of Earth's biodiversity with the aim of protecting species, their habitats, and ecosystems from  extinction 
+
+<center><img src="img/Hintzen_2019.png" height="250px" /></center>
+
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+
+## How can you tell the difference?
+
+<img style="float: right;" src="img/forest.jpg" height="270px">
+<img style="float: left;" src="img/deforest.jpg" height="270px">
+
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## ...Or between this?
+
+<img style="float: right;" src="img/earth.jpg" height="270px">
+<img style="float: left;" src="img/corn.jpg" height="270px">
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## ...Or this?
+
+<img style="float: right;" src="img/nature.jpg" height="270px">
+<img style="float: left;" src="img/pit.jpg" height="270px">
+
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## It's not always that simple
+<img style="float: right;" src="img/func1.png" height="470px">
+<img style="float: left;" src="img/func2.png" height="470px">
+
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## It's not always that simple
+<img style="float: right;" src="img/func3.png" height="420px">
+<img style="float: left;" src="img/func4.png" height="420px">
+
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## It's not always that simple....
+<img style="float: right;" src="img/func5.png" height="470px">
+<img style="float: left;" src="img/func6.png" height="470px">
+
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## So do we measure an ecosystem? 
+
+- How do we know if its healthy or degraded ?
+- How do we know if its functioning properly ?
+- How do we know if its declining ?
+- Or struggling ?
+- How can we measure that ???
+
+<center>![Alt Text](https://media.giphy.com/media/XBbe8ApwcblsY/source.gif)</center>
+
+## Write down your ideas while the videos play
+
+- What do all these things have in common ?
+- What is measurable ?
+- We will watch a series of videos for about 30 seconds each
+
+<center>![Alt Text](https://media.giphy.com/media/gw3Grza6PMw6Yl6U/giphy.gif)</center>
+
+
+## Ecosystems
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WhCsyFpG3Kg?start=495" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## Ecosystems
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nMAzchVWTis?start=2485" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## Ecosystems
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qZ0_aa6RxvQ?start=2016" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## Ecosystems
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/L6JG_L-PWMA?start=2582" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## Ecosystems
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PC1XCR8r8sY?start=1209" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## Ecosystems
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QPGbkjrdD_s?start=3037" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Ecosystems
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LQQRaYnIyK8?start=33" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Ecosystems
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Bsjbyeztpd4?start=1842" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## Ecosystems
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/L9zWDtDKDS8?start=30" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## The First Ecological Experimnent
+" “It has been experimentally proved that if a plot of ground be sown with one species of grass, and a similar plot be sown with several distinct genera of grasses, a greater number of plants and a greater weight of dry herbage can thus be raised.” - Charles Darwin, Origin of Species
+
+<center><img src="img/Hortus.png" alt="Hector 2002" height="320px"><center>
+*Hector 2002*
+
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## Biodiversity and Ecosystem Function {data-background=#8FBC8F}
+<img style="float: left;" src="img/Tilman_Downing.png" height="400px">
+<img style="float: right;" src="img/Tilman_Downing2.png" height="305px">
+*Tilman & Downing 1994*
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## Biodiversity and Ecosystem Function {data-background=#8FBC8F}
+<img style="float: left;" src="img/Naeem.png" height="400px">
+<img style="float: right;" src="img/Naeem2.png" height="305px">
+*Naeem & Li 1997*
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## A Field of Research is Born & Erupts {data-background=#8FBC8F}
+
+<img style="float: center;" src="img/BEF_Search.png" height="470px">
+
+
+## And... continues...
+
+<center><img src="img/Hooper_2016.png" alt="Hooper 2016" height="420px"><center>
+*Hooper 2016*
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+
+## And is extended to other ecosystem functions
+<center><img src="img/Hector_2007.png" alt="Hector 2007" height="420px"><center>
+*Hector 2007*
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## The narrative supports conservation dialogue
+<center><img src="img/Isbell_2017_2.png" alt="Isbell 2017" height="420px"><center>
+*Isbell 2017*
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## But inconsistencies exist
+<center><img src="img/Grace_2016.png" alt="Grace 2016" height="520px"><center>
+*Grace 2016*
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## Patterns are variable
+<center><img src="img/Peterman_2010.png" alt="Peterman 2010" height="450px"><center>
+*Peterman 2010*
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## Caution must be taken
+<center><img src="img/Leibold_2017.png" alt="Leibold 2017" height="420px"><center>
+*Leibold 2017*
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## There are scale dependent expentations
+<center><img src="img/Isbell_2017.png" alt="Isbell_2017" height="320px"><center>
+*Isbell 2017*
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## And ways to partition observed effects to explain different patterns
+<center><img src="img/Isbell_2018.png" alt="Isbell 2018" height="420px"><center>
+*Isbell 2018*
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## Resource competition theory
+
+- According to resource competition theory of all the species initially present in a habitat, the one
+species with the lowest requirement for the resource woulddominate at equilibrium, displacing all other species. 
+
+- On average, total plant biomass increases with diversity because better competitors produce more biomass and because the chance of having better competitors present increases with diversity
+*Tilman 1997*
+
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+
+## Metacommunity dynamics affect all scales of  communities
+<center><img src="img/Chase_inpress.jpg" alt="Chase_inpress" height="420px"><center>
+*Chase et al. in review*
+
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## So why wouldn't meta community dynamics and community assembly affect these processes as well?
+- According to resouce competition theory we can expect different outcomes depending on the gains and losses of species of particular identities
+
+- In situations where poor competitors are able to colonise, this could reduce biomass production
+
+- In fragmented, human-dominated landscapes there are a few cases where this could happen; dispersal of weedy species, exotic species invasions, dispersal of species that are not well-adapted
+
+-These scenarios flip the expectations of Biodiversity and ecosystem functioning on its head
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## Community Assembly & the Functioning of Ecosystems (CAFE)
+
+- After lunch we will explore an emerging method that partitions species  gains, species losses and persistent epecies effects on biomass production to understand the different effects these can have
+
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## After disturbance some communities recover on their own...slowly & not completely
+<center><img src="img/Isbell_2019.png" alt="Isbell_2019" height="420px"><center>
+*Isbell_2019*
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## Restoration 
+<center><img src="img/Temperton_2019.png" alt="Temperton_2019" height="420px"><center>
+*Temperton 2019*
+
+## Restoration
+<center><img src="img/Suding_2004.png" alt="Suding 2004" height="420px"><center>
+*Suding 2004*
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## Restoration; the practice of community reassembly, and a complimentary conservation action
+<center>![Alt Text](https://media.giphy.com/media/agZcXBaYSAKeA/giphy.gif)</center>
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+
+
