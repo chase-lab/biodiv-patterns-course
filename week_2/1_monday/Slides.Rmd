@@ -1,7 +1,7 @@
 ---
 title: "Biodiversity, Community Assembly, Ecosystems, Ecosystem Functioning"
 author: "Emma Ladouceur"
-date: "February 19, 2020"
+date: "February 17, 2020"
 output: 
   ioslides_presentation: default
   beamer_presentation: default
@@ -311,35 +311,7 @@ This is an R Markdown presentation. Markdown is a simple formatting syntax for a
 *Isbell 2018*
 <IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
 
-## Resource competition theory
-
-- According to resource competition theory of all the species initially present in a habitat, the one
-species with the lowest requirement for the resource woulddominate at equilibrium, displacing all other species. 
-
-- On average, total plant biomass increases with diversity because better competitors produce more biomass and because the chance of having better competitors present increases with diversity
-*Tilman 1997*
-
-<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
-
-
-## Metacommunity dynamics affect all scales of  communities
-<center><img src="img/Chase_inpress.jpg" alt="Chase_inpress" height="420px"><center>
-*Chase et al. in review*
-
-<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
-
-## So what about metacommunities, and community assembly?
-- According to resouce competition theory we can expect different outcomes depending on the gains and losses of species of particular identities
-
-- In situations where poor competitors are able to colonise, this could reduce biomass production
-
-- In fragmented, human-dominated landscapes there are a few cases where this could happen; dispersal of weedy species, exotic species invasions, dispersal of species that are not well-adapted
-
--These scenarios flip the expectations of Biodiversity and ecosystem functioning on its head
-<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
-
-
-## Communities recover...slowly & not completely
+## More than a theoretical question
 <center><img src="img/Isbell_2019.png" alt="Isbell_2019" height="420px"><center>
 *Isbell_2019*
 <IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
@@ -357,9 +329,36 @@ species with the lowest requirement for the resource woulddominate at equilibriu
 <center>![Alt Text](https://media.giphy.com/media/agZcXBaYSAKeA/giphy.gif)</center>
 <IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
 
+## Resource competition theory
+
+- According to resource competition theory of all the species initially present in a habitat, the one
+species with the lowest requirement for the resource woulddominate at equilibrium, displacing all other species. 
+
+- On average, total plant biomass increases with diversity because better competitors produce more biomass and because the chance of having better competitors present increases with diversity
+*Tilman 1997*
+
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+
+## Metacommunity dynamics affect all scales of  communities
+<center><img src="img/Chase_inpress.jpg" alt="Chase_inpress" height="420px"><center>
+*Chase et al. in review*
+
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
+## So what about metacommunities, & community assembly?
+- According to resouce competition theory we can expect different outcomes depending on the gains and losses of species of particular identities
+
+- In situations where poor competitors are able to colonise, this could reduce biomass production
+
+- In fragmented, human-dominated landscapes there are a few cases where this could happen; dispersal of weedy species, exotic species invasions, dispersal of species that are not well-adapted
+
+-These scenarios flip the expectations of Biodiversity and ecosystem functioning on its head
+<IMG style="position:absolute;bottom:2.5%;left:5%;width:120px;"SRC="`r logo`">
+
 ## Community Assembly & the Functioning of Ecosystems (CAFE)
 
-- After lunch we will explore an emerging framework that partitions speciesgains, species losses and persistent epecies effects on biomass production to understand the different effects these can have
+- After lunch we will explore an emerging framework that partitions species gains, species losses and persistent epecies effects on biomass production to understand the different effects these can have
 
 - We will do some basic analysis and a small synthesis together
 
@@ -370,4 +369,6 @@ species with the lowest requirement for the resource woulddominate at equilibriu
 - Behind our understanding of species, communities, metacommunities and ecosystems is data and informatics
 
 - Our ability to measure, understand, analyse and manage ecosystems depends on theory, current knowledge and new innovations in these fields
+
+- We can dive into pristince ecosystems, degraded ecosystems, change over time, or change between management practices or treatments
 
