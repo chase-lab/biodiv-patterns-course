@@ -14,7 +14,6 @@ Emma Ladouceur
 
 How do changes in ecological communities affect ecosystem functioning?
 - Analysis together in class by going through the R Markdown Notebook
-- Mini synthesis in class
 
 ## Materials & Methods
 - Slides - follow along & refer to the lecture after

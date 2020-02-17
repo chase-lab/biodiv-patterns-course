@@ -63,6 +63,9 @@ grid_arrange_shared_legend <- function(..., ncol = length(list(...)), nrow = 1, 
 
 
 ```{r}
+
+# Excercise 1 : Invasive seaweed
+
 # Load some data
 
 kelp <- read.csv("./Data/Casasetal_2004_Table1.csv", header=TRUE, na.strings = 0 ) 
@@ -80,9 +83,9 @@ kelp$Species<-as.factor(kelp$Species)
 kelp$MeanBiomass<-as.numeric(kelp$MeanBiomass)
 kelp$Treatment<-as.factor(as.character(kelp$Treatment))
 
-group.vars<-c("Block")
+
 treat.vars<-c("Treatment")
-grouped.dat.kelp<- kelp %>% group_by(.dots=c(treat.vars,group.vars))
+grouped.dat.kelp<- kelp %>% group_by(.dots=c(treat.vars))
 
 # use the question mark to find out more about a function
 #?pairwise.price
@@ -101,30 +104,28 @@ head(pp.k)
 ```{r}
 
 # prune to only a comparison we want
-pp.k<-pp.k[pp.k$Treatment %in% c('present removed', 'present present'),]
+pp.k<-pp.k[pp.k$Treatment %in% c('present removed'),]
 
 # plot!
 
 # BEF style
-leap.zig(pp.k,type='bef',standardize = FALSE,raw.points = T)+ 
+k1<-leap.zig(pp.k,type='bef',standardize = FALSE,raw.points = T)+ 
   annotate("text", x = mean(pp.k$x.rich), y = mean(pp.k$x.func), 
            label = "*",size=8)+ggtitle('present removed')+theme_classic()
 
 # CAFE style with gains and losses
-leap.zig(pp.k,type='cafe',standardize = FALSE,raw.points = T)+ 
+k2<-leap.zig(pp.k,type='cafe',standardize = FALSE,raw.points = T)+ 
   annotate("text", x = mean(pp.k$x.rich), y = mean(pp.k$x.func), 
            label = "*",size=8)+ggtitle('present removed')+theme_classic()
 
-
-
-test.partitions(pp.k,type='cafe',treat.var = 'Treatment',control = 'present present',print=T,plot=T)
-
+grid.arrange(k1,k2,nrow=1)
 ```
 
 
 
 ```{r}
 # Another example from Flory & Clay
+# What are the effects of an invasive grass on forest succcession?
 
 grass <- read.csv("./Data/Flory&Clay_2010_HarvestDatafrom2007.csv", header=TRUE) %>%
   as_tibble()
@@ -162,14 +163,14 @@ levels(pp.g$trt)
 p.g2 <- pp.g[pp.g$trt %in% c('UN INV'),]
 
 levels(p.g2$quad)
-p.g3 <- p.g2[p.g2$quad %in% c('A A'),]
+p.g3 <- p.g2[p.g2$quad %in% c('A A', 'B B', 'C C', 'D D' ,'E E', 'F F'),]
 
 levels(p.g3$tree)
-p.g4 <- p.g3[p.g3$tree %in% c('T T', 'S S'),]
+p.g4 <- p.g3[p.g3$tree %in% c('T T','S S'),]
 
-levels(p.g4$plot)
 
 head(p.g4)
+View(p.g4)
  
 ```
 
@@ -179,16 +180,163 @@ head(p.g4)
 ```{r}
 # now some plots
 
-leap.zig(p.g4,type='cafe',standardize = FALSE,raw.points = F)+ 
-  annotate("text", x = mean(p.g4$x.rich), y = mean(p.g4$x.func), 
+g1<-leap.zig(p.g3,type='cafe',standardize = FALSE,raw.points = F)+ 
+  annotate("text", x = mean(p.g3$x.rich), y = mean(p.g3$x.func), 
            label = "*",size=8)+ggtitle('Absent vs. Invaded')+theme_classic()
  
-leap.zig(p.g4,type='bef',standardize = FALSE,raw.points = F)+ 
-  annotate("text", x = mean(p.g4$x.rich), y = mean(p.g4$x.func), 
+g2<-leap.zig(p.g3,type='bef',standardize = FALSE,raw.points = F)+ 
+  annotate("text", x = mean(p.g3$x.rich), y = mean(p.g3$x.func), 
            label = "*",size=8)+ggtitle('Absent vs. Invaded')+theme_classic()
+
+grid.arrange(g1,g2)
+
+
+```
+
+```{r}
+levels(pp.g$trt)
+p.g2 <- pp.g[pp.g$trt %in% c('UN INV', 'UN UN'),]
+
+p.g3 <- p.g2[p.g2$quad %in% c('A A', 'B B', 'C C', 'D D' ,'E E', 'F F'),]
+
+levels(p.g3$tree)
+p.g4 <- p.g3[p.g3$tree %in% c('T T','S S'),]
+
+View(p.g4)
+
+# some stats
+test.partitions(p.g4,type='cafe',treat.var = 'trt',control = 'UN UN',print=T,plot=T)
+
+
 ```
 
 
+```{r}
+
+p.g4$s.loss <- -1*(p.g4$x.rich - p.g4$c.rich)
+p.g4$s.gain <- p.g4$y.rich - p.g4$c.rich
+
+View(p.g4)
+s.loss<-ggplot(p.g4, aes(x=trt, y=s.loss)) +
+  stat_summary(fun.y=mean, geom="point", 
+                size=0.2)+
+  geom_boxplot(aes(color=trt)) +
+  labs(title= 'c) Species Loss') +
+  #ylim(-10,2)+
+  scale_color_manual(values = c("#00AFBB","#E7B800"))+
+  theme_bw() + theme(axis.text.x=element_blank()) 
+s.loss
+
+s.gain<-ggplot(p.g4, aes(x=trt, y=s.gain, variable)) +
+  stat_summary(fun.y=mean, geom="point", 
+               size=0.2)+
+  geom_boxplot(aes(color=trt)) +
+  labs(title= 'd) Species Gains') +
+  ylim(-2,10)+
+  scale_color_manual(values = c("#00AFBB","#E7B800"))+
+  theme_bw() + theme(axis.text.x=element_blank()) 
+s.gain
+
+SL<-ggplot(p.g4, aes(x=trt, y=SL, variable)) +
+  stat_summary(fun.y=mean, geom="point", 
+               size=0.2)+
+  geom_boxplot(aes(color=trt)) +
+  labs(title= 'e) EF : Species Loss') +
+  ylim(-100,0)+
+  scale_color_manual(values = c("#00AFBB","#E7B800"))+
+  theme_bw() + theme(axis.text.x=element_blank()) 
+SL
+SG<-ggplot(p.g4, aes(x=trt, y=SG, variable)) +
+  stat_summary(fun.y=mean, geom="point", 
+               size=0.2)+
+  geom_boxplot(aes(color=trt)) +
+  labs( title= 'f) EF: Species Gains') +
+  ylim(0,100)+
+  scale_color_manual(values = c("#00AFBB","#E7B800"))+
+  theme_bw() + theme(axis.text.x=element_blank()) 
+SG
+CDE<-ggplot(p.g4, aes(x=trt, y=CDE, variable)) +
+  stat_summary(fun.y=mean, geom="point", 
+               size=0.2)+
+  geom_boxplot(aes(color=trt)) +
+  labs( title= 'g) Context Dependent Effect') +
+  ylim(0,50)+
+  scale_color_manual(values = c("#00AFBB","#E7B800"))+
+  theme_bw() + theme(axis.text.x=element_blank()) 
+CDE
+
+rich<-ggplot(p.g4, aes(x=trt, y=y.rich, variable)) +
+  stat_summary(fun.y=mean, geom="point", 
+               size=0.2)+
+  geom_boxplot(aes(color=trt)) +
+  labs(title= 'a) Richness') +
+  ylim(0,30)+
+  scale_color_manual(values = c("#00AFBB","#E7B800"))+
+  theme_bw() + theme(axis.text.x=element_blank()) 
+rich
+
+bm<-ggplot(p.g4, aes(x=trt, y=y.func, variable)) +
+  stat_summary(fun.y=mean, geom="point", 
+               size=0.2)+
+  geom_boxplot(aes(color=trt)) +
+  labs( title= 'b) Live Biomass') +
+  ylim(0,100)+
+  scale_color_manual(values = c("#00AFBB","#E7B800"))+
+  theme_bw() + theme(axis.text.x=element_blank()) 
+bm
+
+grid_arrange_shared_legend(rich,bm,s.loss,s.gain,SL,SG,CDE,nrow=3,ncol=3)
 
 
+
+
+```
+
+
+```{r}
+# Changes in a rodent community after flooding
+rodents <- read.csv("./Data/Thibault&Brown_2008_Rodents_Flood.csv", header=TRUE) %>%
+  as_tibble()
+
+head(rodents)
+```
+
+```{r}
+# identify grouping variables
+treat.vars<-c('Timing')
+grouped.dat.rodents<- rodents %>% group_by(.dots=c(treat.vars))
+
+# use the question mark to find out more about a function
+#?pairwise.price
+
+res.rodents <- pairwise.price(grouped.dat.rodents, species="species", func="average")
+
+# Create a single column keeping track of the paired set of seeding treatments & other grouping variables:
+pp.r <- res.rodents
+pp.r <- group.columns(pp.r,gps=c(treat.vars), drop=T)
+
+head(pp.r)
+```
+
+```{r}
+levels(pp.r$Timing)
+p.r2 <- pp.r[pp.r$Timing %in% c('Preflood Postflood'),]
+
+
+```
+
+
+```{r}
+# now some plots
+
+r1<-leap.zig(p.r2,type='cafe',standardize = FALSE,raw.points = T)+ 
+  annotate("text", x = mean(p.r2$x.rich), y = mean(p.r2$x.func), 
+           label = "*",size=8)+ggtitle('Absent vs. Invaded')+theme_classic()
+ 
+r2<-leap.zig(p.r2,type='bef',standardize = FALSE,raw.points = T)+ 
+  annotate("text", x = mean(p.r2$x.rich), y = mean(p.r2$x.func), 
+           label = "*",size=8)+ggtitle('Absent vs. Invaded')+theme_classic()
+
+grid.arrange(r1,r2)
+```
 
