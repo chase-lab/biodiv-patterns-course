@@ -2,4 +2,6 @@
 Beta-diversity, composition and turnover
 
 ## Lecturer
-Shane, Thore
+Shane
+
+### This is a test.
