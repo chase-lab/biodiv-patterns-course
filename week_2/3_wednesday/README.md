@@ -18,5 +18,5 @@ How do we measure components of biodiversity using the mob framework?
 
 How do components of biodiversity contribute to elevational species richness patters?
 
-* Re-analysis of a few case studies (group)
+* Analysis of a datasets from the literature (group)
 * Mini synthesis in class
