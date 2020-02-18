@@ -18,5 +18,6 @@ Max, Emma
 
 ### Readings
 - [ggplot2 documentation](https://ggplot2.tidyverse.org/reference/index.html)
+- [Introduction to ggplot2 in R: blogpost on Medium](https://towardsdatascience.com/introduction-to-ggplot2-in-r-4db4f720f505)
 - [R shiny documentation](https://shiny.rstudio.com/)
 - [r2d3: d3 wrapper in R](https://rstudio.github.io/r2d3/)
