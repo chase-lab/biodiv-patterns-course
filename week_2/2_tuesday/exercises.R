@@ -31,9 +31,13 @@ cv_abund = list(list(cv_abund=1),
 #--------simulate communities-------------------
 maps = NULL
 maps$agg = lapply(cv_abund, function(x) 
-  sim_thomas_community(S_pool, N, 'lnorm', x, fix_s_sim = T))
+  sim_thomas_community(S_pool, N, 'lnorm', x, fix_s_sim = T,
+                       xrange = c(0,1), yrange = c(0,1)
+                       ))
 maps$poi = lapply(cv_abund, function(x) 
-  sim_poisson_community(S_pool, N, 'lnorm', x, fix_s_sim = T))
+  sim_poisson_community(S_pool, N, 'lnorm', x, fix_s_sim = T,
+                        xrange = c(0,1), yrange = c(0,1)
+                        ))
 
 
 
