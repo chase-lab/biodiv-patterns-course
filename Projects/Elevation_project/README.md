@@ -16,9 +16,11 @@ If you decide to do this project you will find yourself facing some challenges:
 
 * **Linking back to the original study**: Discuss your results in the light of the original study by Szewczyk and McCain. Use the analyses provided by the paper to try to better understand your own patterns.
 
-Here is an overview of the study design:
+## Overview of the study design:
 
-![Figure 1](Fig1.jpg)
+![Figure 1](Fig1.jpg =100x)
+
+*"Sampling design and model spatial structure. Four elevational gradients in Colorado were sampled, with two in the San Juans and two in the Front Range. Each gradient consisted of 7–8 sites, i, separated by ~250 m in elevation. At each site, 20 pairs of pitfall traps, j, collected insects. Traps were set for 90 d during the summer with up to 6 collections, kij, per trap. [...]"*
 
 
 
