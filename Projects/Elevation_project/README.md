@@ -18,7 +18,7 @@ If you decide to do this project you will find yourself facing some challenges:
 
 ## Overview of the study design:
 
-![Figure 1](Fig1.jpg =100x)
+![Figure 1](Fig1.jpg)
 
 *"Sampling design and model spatial structure. Four elevational gradients in Colorado were sampled, with two in the San Juans and two in the Front Range. Each gradient consisted of 7–8 sites, i, separated by ~250 m in elevation. At each site, 20 pairs of pitfall traps, j, collected insects. Traps were set for 90 d during the summer with up to 6 collections, kij, per trap. [...]"*
 
